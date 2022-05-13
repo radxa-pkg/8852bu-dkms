@@ -149,7 +149,7 @@ CONFIG_LAYER2_ROAMING = y
 CONFIG_ROAMING_FLAG = 0x3
 
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
+CONFIG_PLATFORM_I386_PC = n
 CONFIG_PLATFORM_RTL8198D = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
@@ -158,7 +158,7 @@ CONFIG_PLATFORM_NV_TK1_UBUNTU = n
 CONFIG_PLATFORM_ARM_SUNxI = n
 CONFIG_PLATFORM_RTK1319 = n
 CONFIG_PLATFORM_RTK16XXB = n
-CONFIG_PLATFORM_AML_S905 = n
+CONFIG_PLATFORM_AML_S905 = y
 
 ########### CUSTOMER ################################
 
@@ -579,7 +579,7 @@ endif
 
 ########### PLATFORM OPS  ##########################
 # Import platform assigned KSRC and CROSS_COMPILE
-include $(wildcard $(DRV_PATH)/platform/*.mk)
+include $(wildcard $(src)/platform/*.mk)
 
 # Import platform specific compile options
 EXTRA_CFLAGS += -I$(src)/platform
