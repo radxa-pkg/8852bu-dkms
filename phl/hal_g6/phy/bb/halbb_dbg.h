@@ -25,6 +25,7 @@
 #ifndef __HALBB_DBG_H__
 #define __HALBB_DBG_H__
 
+#include <rtw_debug.h>
 #include "../../hal_headers_le.h"
 
 /*@--------------------------[Define] ---------------------------------------*/
@@ -40,14 +41,14 @@
 	#ifdef HALBB_DBCC_SUPPORT
 		#define BB_DBG(bb, comp, fmt, ...)     \
 			do {\
-				if(bb->dbg_component & comp) {\
+				if(((bb)->dbg_component & comp) && (_DRV_DEBUG_ <= rtw_drv_log_level)) {\
 					_os_dbgdump("[BB][%d]" fmt, bb->bb_phy_idx, ##__VA_ARGS__);\
 				} \
 			} while (0)
 	#else
 		#define BB_DBG(bb, comp, fmt, ...)     \
 			do {\
-				if(bb->dbg_component & comp) {\
+				if(((bb)->dbg_component & comp) && (_DRV_DEBUG_ <= rtw_drv_log_level)) {\
 					_os_dbgdump("[BB]" fmt, ##__VA_ARGS__);\
 				} \
 			} while (0)
@@ -60,7 +61,8 @@
 		
 	#define BB_WARNING(fmt, ...)     \
 		do {\
-			_os_dbgdump("[WARNING][BB]" fmt, ##__VA_ARGS__);\
+			if(_DRV_WARNING_ <= rtw_drv_log_level)\
+				_os_dbgdump("[WARNING][BB]" fmt, ##__VA_ARGS__);\
 		} while (0)
 
 	#define	BB_DBG_CNSL2(in_cnsl, max_buff_len, used_len, buff_addr, remain_len, fmt, ...)\
@@ -90,7 +92,8 @@
 
 #define BB_DBG_VAST(max_buff_len, used_len, buff_addr, remain_len, fmt, ...)\
 	do {\
-		_os_dbgdump("[CNSL]" fmt, ##__VA_ARGS__);\
+		if(_DRV_DEBUG_ <= rtw_drv_log_level)\
+			_os_dbgdump("[CNSL]" fmt, ##__VA_ARGS__);\
 	} while (0)
 
 #define	BB_DBG_CNSL(max_buff_len, used_len, buff_addr, remain_len, fmt, ...)\

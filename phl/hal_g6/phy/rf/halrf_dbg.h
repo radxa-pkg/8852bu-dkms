@@ -25,6 +25,8 @@
 #ifndef __HALRF_DBG_H__
 #define __HALRF_DBG_H__
 
+#include <rtw_debug.h>
+
 /*@--------------------------[Define] ---------------------------------------*/
 #define HALRF_WATCHDOG_PERIOD	2 /*second*/
 
@@ -34,7 +36,7 @@
 #ifdef RFDBG_TRACE_EN
 	#define RF_DBG(rf, comp, fmt, ...)     \
 		do {\
-			if(rf->dbg_component & comp)\
+			if(((rf)->dbg_component & comp) && (_DRV_DEBUG_ <= rtw_drv_log_level))\
 				_os_dbgdump("[RF]" fmt, ##__VA_ARGS__);\
 		} while (0)
 		
@@ -45,12 +47,14 @@
 		
 	#define RF_WARNING(fmt, ...)     \
 		do {\
-			_os_dbgdump("[WARNING][RF]" fmt, ##__VA_ARGS__);\
+			if(_DRV_WARNING_ <= rtw_drv_log_level)\
+				_os_dbgdump("[WARNING][RF]" fmt, ##__VA_ARGS__);\
 		} while (0)
 
 	#define RF_DBG_VAST(max_buff_len, used_len, buff_addr, remain_len, fmt, ...)\
 		do {\
-			_os_dbgdump(fmt, ##__VA_ARGS__);\
+			if(_DRV_DEBUG_ <= rtw_drv_log_level)\
+				_os_dbgdump(fmt, ##__VA_ARGS__);\
 		} while (0)
 
 	#define	RF_DBG_CNSL(max_buff_len, used_len, buff_addr, remain_len, fmt, ...)\

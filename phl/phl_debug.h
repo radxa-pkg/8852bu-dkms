@@ -61,7 +61,7 @@ enum {
 #define COMP_PHL_TWT BIT19
 
 extern u32 phl_log_components;
-extern u8 phl_log_level;
+extern uint rtw_drv_log_level;
 #define DEBUG_MAX_NAME_LEN 50
 
 struct dbg_alloc_buf {
@@ -83,7 +83,7 @@ struct dbg_mem_ctx {
 #undef PHL_TRACE
 #define PHL_TRACE(comp, level, fmt, ...)     \
 	do {\
-		if(((comp) & phl_log_components) && (level <= phl_log_level)) {\
+		if(((comp) & phl_log_components) && (level <= rtw_drv_log_level)) {\
 			_os_dbgdump(PHL_PREFIX fmt, ##__VA_ARGS__);\
 		} \
 	} while (0)
@@ -91,7 +91,7 @@ struct dbg_mem_ctx {
 #undef PHL_DATA
 #define PHL_DATA(comp, level, fmt, ...)     \
 	do {\
-		if(((comp) & phl_log_components) && (level <= phl_log_level)) {\
+		if(((comp) & phl_log_components) && (level <= rtw_drv_log_level)) {\
 			_os_dbgdump(KERN_CONT fmt, ##__VA_ARGS__);\
 		} \
 	} while (0)
