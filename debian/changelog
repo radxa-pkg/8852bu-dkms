@@ -1,3 +1,9 @@
+8852bu (1.15.7.112.1) UNRELEASED; urgency=medium
+
+  * Fix module loading
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 10 Apr 2023 22:13:09 +0800
+
 8852bu (1.15.7.112.0) main; urgency=medium
 
   * Initial release
