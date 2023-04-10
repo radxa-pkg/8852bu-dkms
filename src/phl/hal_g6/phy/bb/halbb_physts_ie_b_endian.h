@@ -38,7 +38,7 @@ struct physts_hdr_info {
 	u8 ie_bitmap_select: 5;
 	u8 physts_total_length;	/*total length(unit: 8byte)*/
 	u8 rsvd_1;
-	u8 rssi_avg_td;		/*U(8,1) RSSI=dBm+110¡Aex:-30dBm->RSSI:80%*/
+	u8 rssi_avg_td;		/*U(8,1) RSSI=dBm+110ï¿½Aex:-30dBm->RSSI:80%*/
 	u8 rssi_td[4];
 };
 

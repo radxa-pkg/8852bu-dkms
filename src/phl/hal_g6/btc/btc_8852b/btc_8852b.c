@@ -152,7 +152,7 @@ void _8852b_wl_tx_power(struct btc_t *btc, u32 level)
 {
 	/*
 	* =========== All-Time WL Tx power control ===========
-    	* (ex: all-time fix WL Tx 10dBm , don¡¦t care GNT _BT and GNT _LTE)
+    	* (ex: all-time fix WL Tx 10dBm , donï¿½ï¿½t care GNT _BT and GNT _LTE)
 	* Turn off per-packet power control
 	* 0xD220[1] = 0, 0xD220[2] = 0;
 	*
