@@ -1,3 +1,9 @@
+8852bu (1.15.7.112-1) stable; urgency=medium
+
+  * Change source format
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Sun, 23 Apr 2023 15:01:24 +0800
+
 8852bu (1.15.7.112.2) stable; urgency=medium
 
   * Fix changelog
