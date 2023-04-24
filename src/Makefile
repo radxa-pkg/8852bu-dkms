@@ -618,8 +618,7 @@ endif
 include $(src)/phl/phl.mk
 
 
-obj-$(CONFIG_RTL8852BU) := $(MODULE_NAME).o
-obj-$(CPTCFG_RTL8852AE) := $(MODULE_NAME).o
+obj-m := $(MODULE_NAME).o
 $(MODULE_NAME)-y = $(OBJS)
 
 else
