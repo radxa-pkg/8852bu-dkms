@@ -1,3 +1,15 @@
+8852bu (1.15.7.112-3) stable; urgency=medium
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 3 to 4
+
+  [ ZHANG Yuntian ]
+  * fix: ignore intermediate files
+  * fix: add missing build dependency
+  * feat: update CI
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 18 Jan 2024 19:02:24 +0800
+
 8852bu (1.15.7.112-2) stable; urgency=medium
 
   [ ZHANG Yuntian ]
