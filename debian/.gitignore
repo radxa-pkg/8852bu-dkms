@@ -1,7 +1,7 @@
 /.debhelper
 /debhelper-build-stamp
 /files
-/8852bu
+/8852bu-dkms
 /*.debhelper.log
-/*.postrm.debhelper
+/*.debhelper
 /*.substvars
